@@ -1,9 +1,9 @@
 
 local S = hades_paleoflora.translator
 
--- onion seeds
+-- rhamnus salifocifus seeds
 minetest.register_node("hades_paleoflora:seed_rhamnus_salifocifus", {
-	description = S("Wild Onion Seed"),
+	description = S("Rhamnus Salifocifus Seed"),
 	tiles = {"hades_paleoflora_rhamnus_salifocifus_seeds.png"},
 	inventory_image = "hades_paleoflora_rhamnus_salifocifus_seeds.png",
 	wield_image = "hades_paleoflora_rhamnus_salifocifus_seeds.png",
@@ -43,9 +43,9 @@ temp_effects.register_effect_type("rhamnus_poison", {
   end,
 })
 
-minetest.register_craftitem("hades_paleoflora:rhamnus_salifocifus", {
-	description = S("Rhamnus Salifocifus"),
-	inventory_image = "hades_paleoflora_rhamnus_salifocifus.png",
+minetest.register_craftitem("hades_paleoflora:rhamnus_salifocifus_berries", {
+	description = S("Rhamnus Salifocifus Berries"),
+	inventory_image = "hades_paleoflora_rhamnus_salifocifus_berries.png",
 	groups = {seed = 2, flammable = 3, food = 2, eatable = 1},
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "hades_paleoflora:rhamnus_salifocifus_1")
@@ -53,7 +53,7 @@ minetest.register_craftitem("hades_paleoflora:rhamnus_salifocifus", {
 	on_use = function(itemstack, user, pointed_thing)
     local player_name = user:get_player_name()
     if (player_name~="") then
-      temp_effects.add_effect("rhamnus_poison", player_name, math.random(500,700), nil)
+      temp_effects.add_effect("rhamnus_poison", player_name, math.random(150,240), nil)
     end
     return minetest.do_item_eat(5, nil, itemstack, user, pointed_thing)
   end,
@@ -62,7 +62,7 @@ minetest.register_craftitem("hades_paleoflora:rhamnus_salifocifus", {
 -- crop definition
 local def = {
 	drawtype = "plantlike",
-	tiles = {"hades_paleoflora_rhamnus_salifocifus_plant_1.png"},
+	tiles = {"hades_paleoflora_rhamnus_salifocifus_1.png"},
 	paramtype = "light",
 	paramtype2 = "meshoptions",
 	place_param2 = 3,
@@ -83,25 +83,25 @@ local def = {
 minetest.register_node("hades_paleoflora:rhamnus_salifocifus_1", table.copy(def))
 
 -- stage 2
-def.tiles = {"hades_paleoflora_rhamnus_salifocifus_plant_2.png"}
+def.tiles = {"hades_paleoflora_rhamnus_salifocifus_2.png"}
 minetest.register_node("hades_paleoflora:rhamnus_salifocifus_2", table.copy(def))
 
 -- stage 3
-def.tiles = {"hades_paleoflora_rhamnus_salifocifus_plant_3.png"}
+def.tiles = {"hades_paleoflora_rhamnus_salifocifus_3.png"}
 minetest.register_node("hades_paleoflora:rhamnus_salifocifus_3", table.copy(def))
 
 -- stage 4
-def.tiles = {"hades_paleoflora_rhamnus_salifocifus_plant_4.png"}
+def.tiles = {"hades_paleoflora_rhamnus_salifocifus_4.png"}
 minetest.register_node("hades_paleoflora:rhamnus_salifocifus_4", table.copy(def))
 
 -- stage 7
-def.tiles = {"hades_paleoflora_rhamnus_salifocifus_plant_7.png"}
+def.tiles = {"hades_paleoflora_rhamnus_salifocifus_7.png"}
 def.groups.growing = nil
 def.selection_box = farming.select_final
 def.drop = {
 	max_items = 5, items = {
 		{items = {"hades_paleoflora:seed_rhamnus_salifocifus"}, rarity = 1},
-		{items = {"hades_paleoflora:rhamnus_salifocifus"}, rarity = 1},
+		{items = {"hades_paleoflora:rhamnus_salifocifus_berries"}, rarity = 1},
 		{items = {"hades_paleoflora:seed_rhamnus_salifocifus"}, rarity = 5},
 	}
 }

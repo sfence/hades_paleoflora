@@ -3,7 +3,7 @@ local S = hades_paleoflora.translator
 
 -- potato seeds
 minetest.register_node("hades_paleoflora:seed_wild_potato", {
-	description = S("Wild Onion Seed"),
+	description = S("Wild Potato Seed"),
 	tiles = {"hades_paleoflora_wild_potato_seeds.png"},
 	inventory_image = "hades_paleoflora_wild_potato_seeds.png",
 	wield_image = "hades_paleoflora_wild_potato_seeds.png",
@@ -21,8 +21,8 @@ minetest.register_node("hades_paleoflora:seed_wild_potato", {
 
 -- wild potato
 minetest.register_craftitem("hades_paleoflora:wild_potato", {
-	description = S("Wild Onion"),
-	inventory_image = "hades_paleoflora_potato.png",
+	description = S("Wild Potato"),
+	inventory_image = "hades_paleoflora_wild_potato.png",
 	groups = {seed = 2, flammable = 3, food = 2, eatable = 1},
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "hades_paleoflora:wild_potato_1")
@@ -32,8 +32,8 @@ minetest.register_craftitem("hades_paleoflora:wild_potato", {
 
 -- wild potato pack
 minetest.register_craftitem("hades_paleoflora:wild_potato_pack", {
-	description = S("Wild Onion Pack"),
-	inventory_image = "hades_paleoflora_potato.png",
+	description = S("Wild Potato Pack"),
+	inventory_image = "hades_paleoflora_wild_potato_pack.png",
 	groups = {seed = 2, food_potato = 1, flammable = 3, food = 2, eatable = 1},
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "hades_paleoflora:potato_1")
@@ -52,7 +52,7 @@ minetest.register_craft({
 -- crop definition
 local def = {
 	drawtype = "plantlike",
-	tiles = {"hades_paleoflora_wild_potato_plant_1.png"},
+	tiles = {"hades_paleoflora_wild_potato_1.png"},
 	paramtype = "light",
 	paramtype2 = "meshoptions",
 	place_param2 = 3,
@@ -73,23 +73,23 @@ local def = {
 minetest.register_node("hades_paleoflora:wild_potato_1", table.copy(def))
 
 -- stage 2
-def.tiles = {"hades_paleoflora_wild_potato_plant_2.png"}
+def.tiles = {"hades_paleoflora_wild_potato_2.png"}
 minetest.register_node("hades_paleoflora:wild_potato_2", table.copy(def))
 
 -- stage 3
-def.tiles = {"hades_paleoflora_wild_potato_plant_3.png"}
+def.tiles = {"hades_paleoflora_wild_potato_3.png"}
 minetest.register_node("hades_paleoflora:wild_potato_3", table.copy(def))
 
 -- stage 4
-def.tiles = {"hades_paleoflora_wild_potato_plant_4.png"}
+def.tiles = {"hades_paleoflora_wild_potato_4.png"}
 minetest.register_node("hades_paleoflora:wild_potato_4", table.copy(def))
 
 -- stage 5
-def.tiles = {"hades_paleoflora_wild_potato_plant_5.png"}
+def.tiles = {"hades_paleoflora_wild_potato_5.png"}
 minetest.register_node("hades_paleoflora:wild_potato_5", table.copy(def))
 
 -- stage 6
-def.tiles = {"hades_paleoflora_wild_potato_plant_6.png"}
+def.tiles = {"hades_paleoflora_wild_potato_6.png"}
 def.groups.growing = nil
 def.selection_box = farming.select_final
 def.drop = {

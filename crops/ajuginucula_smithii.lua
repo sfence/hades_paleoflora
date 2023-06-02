@@ -5,9 +5,9 @@ local S = hades_paleoflora.translator
 -- onion seeds
 minetest.register_node("hades_paleoflora:seed_ajuginucula_smithii", {
 	description = S("Ajuginucula Smithii Seeds"),
-	tiles = {"hades_paleoflora_ajuginucula_smithi_seeds.png"},
-	inventory_image = "hades_paleoflora_ajuginucula_smithi_seeds.png",
-	wield_image = "hades_paleoflora_ajuginucula_smithi_seeds.png",
+	tiles = {"hades_paleoflora_ajuginucula_smithii_seeds.png"},
+	inventory_image = "hades_paleoflora_ajuginucula_smithii_seeds.png",
+	wield_image = "hades_paleoflora_ajuginucula_smithii_seeds.png",
 	drawtype = "signlike",
 	groups = {seed = 1, snappy = 3, attached_node = 1, flammable = 2},
 	paramtype = "light",
@@ -23,7 +23,7 @@ minetest.register_node("hades_paleoflora:seed_ajuginucula_smithii", {
 -- Ajuginucula Smithi
 minetest.register_craftitem("hades_paleoflora:ajuginucula_smithi", {
 	description = S("Ajuginucula Smithii"),
-	inventory_image = "hades_paleoflora_ajuginucula_smithi.png",
+	inventory_image = "hades_paleoflora_ajuginucula_smithii_leaves.png",
 	groups = {seed = 2, flammable = 3, food = 2, eatable = 1},
 	on_use = minetest.item_eat(1)
 })
@@ -31,7 +31,7 @@ minetest.register_craftitem("hades_paleoflora:ajuginucula_smithi", {
 -- crop definition
 local def = {
 	drawtype = "plantlike",
-	tiles = {"hades_paleoflora_ajuginucula_smithii_plant_1.png"},
+	tiles = {"hades_paleoflora_ajuginucula_smithii_1.png"},
 	paramtype = "light",
 	paramtype2 = "meshoptions",
 	place_param2 = 3,
@@ -52,27 +52,27 @@ local def = {
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_1", table.copy(def))
 
 -- stage 2
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_2.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_2.png"}
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_2", table.copy(def))
 
 -- stage 3
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_3.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_3.png"}
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_3", table.copy(def))
 
 -- stage 4
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_4.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_4.png"}
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_4", table.copy(def))
 
 -- stage 5
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_5.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_5.png"}
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_5", table.copy(def))
 
 -- stage 6
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_6.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_6.png"}
 minetest.register_node("hades_paleoflora:ajuginucula_smithii_6", table.copy(def))
 
 -- stage 7
-def.tiles = {"hades_paleoflora_ajuginucula_smithii_plant_7.png"}
+def.tiles = {"hades_paleoflora_ajuginucula_smithii_7.png"}
 def.groups.growing = nil
 def.selection_box = farming.select_final
 def.drop = {
